@@ -5,4 +5,9 @@
     public string $email;
     public string $senha;
     public array $telefones;
+
+    // Métodos (ou comportamento)
+    public function exibirDados(){
+        
+    }
  }
