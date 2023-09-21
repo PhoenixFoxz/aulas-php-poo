@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo</title>
+    <title>Exemplo 2</title>
 </head>
 <body>
-    <h1>PHP com POO - Exemplo 1</h1>  
+    <h1>PHP com POO - Exemplo 2</h1>  
     <hr>
     <h2>Assuntos abordados:</h2>
     <ul>
-        <li>Criação de classe</li>
-        <li>Importação do arquivo de classe</li>
-        <li>Criação de intâncias/objetos</li>
+        <li>Acesso direto às propriedades</li>
+        <li>Atribuição e leitura de dados</li>
+        <li>Chamada de métodos</li>
     </ul>
 
 <?php
@@ -22,7 +22,21 @@ require_once "src/Cliente.php";
 // Criando instâncias da Classe (Objetos)
 $clienteA = new Cliente;
 $clienteB = new Cliente;
+
+// Acesso e Atribuição
+$clienteA->nome = "Tiago";
+$clienteB->nome = "Bernardo";
+$clienteA->telefones = ["11-2135-0300", "11-96666-5555"];
+$clienteA->email = "tiago@gmail.com";
+$clienteA->senha = password_hash("123abc", PASSWORD_DEFAULT);
 ?>
+
+<hr>
+
+<h2>Dados dos objetos</h2>
+<h3> <?= $clienteA->nome ?> </h3>
+<h3> <?= $clienteB->nome ?> </h3>
+
 <pre><?=var_dump($clienteA, $clienteB)?></pre>
 </body>
 </html>
