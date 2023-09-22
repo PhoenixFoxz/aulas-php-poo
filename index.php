@@ -35,6 +35,25 @@ $clienteA->senha = password_hash("123abc", PASSWORD_DEFAULT);
 
 <h2>Dados dos objetos</h2>
 <h3> <?= $clienteA->nome ?> </h3>
+<p>E-mail: <?= $clienteA->email ?></p>
+<p>Telefones: (Acesso um por um) 
+    <?= $clienteA->telefones[0] ?>,
+    <?= $clienteA->telefones[1] ?>
+</p>
+<p> Telefones: (Convertendo para string)
+    <?=implode(", ", $clienteA->telefones)?>
+</p>
+<p>
+    Telefones: (Usando loop)
+</p>
+<ul>
+    <?php foreach($clienteA->telefones as $telefone){
+    ?>
+    <li><?=$telefone?></li>
+    <?php    
+    }
+    ?>
+</ul>
 <h3> <?= $clienteB->nome ?> </h3>
 
 <pre><?=var_dump($clienteA, $clienteB)?></pre>
