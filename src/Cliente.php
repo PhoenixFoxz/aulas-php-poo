@@ -11,4 +11,9 @@
       $this->nome = $nome;
    // Propriedade  Parâmetro
     }
+
+    public function getNome():string 
+    {
+      return $this->nome;
+    }
  }
