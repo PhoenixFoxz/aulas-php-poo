@@ -11,19 +11,49 @@
     <h2>Assuntos abordados:</h2>
     <ul>
         <li>Herança (Super Classe e Sub Classe)</li>
+        <li>Método/propriedades protegidos (acessíveis apenas pela classe em que foram definidos e pelas subclasses)</li>
+        <li>Classe Abstrata</li>
+        <li>Classe final</li>
     </ul>
 
 <?php
 require_once "src/PessoaFisica.php";
+require_once "src/PessoaJuridica.php";
+
 $clientePF = new PessoaFisica; 
+$clientePJ = new PessoaJuridica; 
 
 // Colocar um nome no Cliente PF
 $clientePF->setNome("Fulano");
 $clientePF->setEmail("fulano@gmail.com");
 $clientePF->setIdade(40);
 $clientePF->setCpf("123.456.789-00");
+
+$clientePJ->setNome("Beltrano S/A");
+$clientePJ->setEmail("blablabla@gmail.com");
+$clientePJ->setAnoFundacao(2000);
+$clientePJ->setCnpj("32.088.0001/000.41");
+$clientePJ->setNomeFantasia("Bla Bla Bla Informática")
 ?>
 
-<pre><?=var_dump($clientePF)?></pre>
+
+<h3>ClientePJ</h3>
+<ul>
+    <li><b>Nome:</b> <?=$clientePJ->getNome()?></li>
+    <li><b>E-mail:</b> <?=$clientePJ->getEmail()?></li>
+    <li><b>Ano:</b> <?=$clientePJ->getAnoFundacao()?></li>
+    <li><b>CNPJ:</b> <?=$clientePJ->getCnpj()?></li>
+    <li><b>Nome Fantasia:</b> <?=$clientePJ->getNomeFantasia()?></li>
+</ul>
+
+<pre><?=var_dump($clientePJ)?></pre>
+
+<hr>
+
+<?php 
+require_once "src/Cliente.php";
+$clienteGenerico = new Cliente;
+?>
+<pre><?=var_dump($clienteGenerico)?></pre>
 </body>
 </html>
