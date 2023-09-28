@@ -11,15 +11,14 @@ class PessoaJuridica extends Cliente {
         // Acessando o método setter PROTEGIDO (existente em Cliente)
         $this->setSituacao("em análise");
     }
-
-    public function exibirDados():void 
-    {
-        echo "<h3>Método exibirDados - Classe PessoaJuridica</h3>";
-        echo "<h4>".$this->getNome()."</h4>";
-        echo "<p>Situação: ".$this->getSituacao()." </p>";
-        echo "<p>Nome Fantasia: ".$this->nomeFantasia." </p>";
-    }
     
+    public function exibirDados():void {
+        // parent::recursos
+        // Permite o acesso aos recursos da classe Pai (superclasse)
+        parent::exibirDados();
+        echo "<p>Nome Fantasia: $this->nomeFantasia</p>";
+    }
+
     public function getAnoFundacao(): int {
         return $this->anoFundacao;
     }
