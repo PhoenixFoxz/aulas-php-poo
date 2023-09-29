@@ -18,7 +18,7 @@
 <?php 
 use Fornecedor\Pagamento;
 use Prestador\Pagamento as PrestadorPagamento;
-use Tabajara\{MEI, PessoaFisica as PF, PessoaJuridica as PJ};
+use Tabajara\{Escola, MEI, PessoaFisica as PF, PessoaJuridica as PJ};
 
 require_once "vendor/autoload.php";
 
@@ -63,5 +63,12 @@ $clienteMEI->setAreaDeAtuacao("Vendedor de Picolé");
 <h2>Cliente MEI</h2>
 <p>Nome: <?=$clienteMEI->getNome()?></p>
 <p>Área de Atuação: <?=$clienteMEI->getAreaDeAtuacao()?></p>
+
+<hr>
+
+<?php 
+$escola = new Escola;
+var_dump($escola);
+?>
 </body>
 </html>
